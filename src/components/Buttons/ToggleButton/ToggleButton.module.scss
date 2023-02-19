@@ -1,0 +1,31 @@
+@import '../../../styles/colors';
+
+.toggleButton {
+    appearance: none;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    position: relative;
+
+    &:hover{
+        transform: scale(1.4);
+    }
+  &::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $color-mine-shaft;
+  }
+  > span {
+    position: fixed;
+    top: -99999px;
+    left: -99999px;
+    display: block;
+  }
+}
