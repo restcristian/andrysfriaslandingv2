@@ -1,15 +1,40 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+import { Inter } from "@next/font/google";
+import Page from "@/components/Page/Page";
 
-const inter = Inter({ subsets: ['latin'] })
+import styles from "./page.module.scss";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-       
+    <Page>
+      <div className={styles.Home}>
+        <div className = {styles.wrapper}>
+          <h1 className={styles.heading}>
+            <span>Hello There!</span>
+            <span className={styles.light}>My Name is</span>
+            <span>Andrys Frias.</span>
+          </h1>
+          <div>
+            <span className={styles.subline}>
+              I am a Digital Product Designer based in Berlin, Germany
+            </span>
+          </div>
+          <div>
+            <span className={styles.description}>
+              And I could help you with the design of
+              <span className={styles.stuff}></span> for you. If you are a
+              king/queen from a savage forest interested in what I do just say{" "}
+              <a
+                className={styles.linkEmail}
+                href="mailto:andrysfrias@gmail.com"
+              >
+                Hi Back!
+              </a>
+            </span>
+          </div>
+        </div>
       </div>
-    </main>
-  )
+    </Page>
+  );
 }

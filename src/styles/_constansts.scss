@@ -1,2 +1,14 @@
+
 $padding-gap: 0 24px;
 $grid-width: 1124px;
+
+@mixin grid {
+    max-width: $grid-width;
+    margin: 0 auto;
+}
+
+@mixin reset {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}

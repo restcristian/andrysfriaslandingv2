@@ -1,0 +1,51 @@
+@import "../styles/constansts";
+
+.Home {
+  @include grid();
+  @include reset();
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+
+  .wrapper {
+    width: 83%;
+  }
+
+  .heading {
+    font-size: 120px;
+    line-height: 116px;
+    margin: 0;
+    font-weight: 700;
+
+    .light {
+      font-weight: 300;
+    }
+
+    > span {
+      display: block;
+    }
+  }
+
+  .subline {
+    font-family: "Source Code Pro", monospace;
+    font-size: 23px;
+    text-decoration: underline;
+    display: block;
+    margin-top: 28px;
+  }
+
+  .description {
+    font-family: "Source Code Pro", monospace;
+    font-size: 16px;
+    display: block;
+    margin-top: 16px;
+
+  }
+
+  .linkEmail {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+  }
+}
