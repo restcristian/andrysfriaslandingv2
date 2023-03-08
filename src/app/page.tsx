@@ -1,8 +1,8 @@
-
 import { Inter } from "@next/font/google";
 import Page from "@/components/Page/Page";
 import styles from "./page.module.scss";
 import AnimatedText from "@/components/AnimatedText/AnimatedText";
+import Arrow from "@/components/Icons/Arrow";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +34,9 @@ export default function Home() {
                 Hi Back!
               </a>
             </span>
+          </div>
+          <div className={styles.arrowContainer}>
+            <Arrow width="24px" />
           </div>
         </div>
       </div>
