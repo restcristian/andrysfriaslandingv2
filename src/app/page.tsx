@@ -1,7 +1,8 @@
+
 import { Inter } from "@next/font/google";
 import Page from "@/components/Page/Page";
-
 import styles from "./page.module.scss";
+import AnimatedText from "@/components/AnimatedText/AnimatedText";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,7 +10,7 @@ export default function Home() {
   return (
     <Page>
       <div className={styles.Home}>
-        <div className = {styles.wrapper}>
+        <div className={styles.wrapper}>
           <h1 className={styles.heading}>
             <span>Hello There!</span>
             <span className={styles.light}>My Name is</span>
@@ -23,8 +24,9 @@ export default function Home() {
           <div>
             <span className={styles.description}>
               And I could help you with the design of
-              <span className={styles.stuff}></span> for you. If you are a
-              king/queen from a savage forest interested in what I do just say{" "}
+              <AnimatedText />
+              for you. If you are a king/queen from a savage forest interested
+              in what I do just say{" "}
               <a
                 className={styles.linkEmail}
                 href="mailto:andrysfrias@gmail.com"
