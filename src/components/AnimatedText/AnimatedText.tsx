@@ -1,6 +1,6 @@
 "use client";
-import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import styles from "./AnimatedText.module.scss";
 
 function AnimatedText() {
   const [text, setText] = useState("");
@@ -23,18 +23,7 @@ function AnimatedText() {
     return () => clearTimeout(timeoutId);
   }, [currentSkillIndex, skills]);
 
-  return (
-    <span
-      style={{
-        padding: "0 24px",
-        width: "150px",
-        textAlign: "center",
-        display: "inline-block",
-      }}
-    >
-      <motion.span>{text}</motion.span>
-    </span>
-  );
+  return <span className={styles.animatedText}>{text}</span>;
 }
 
 export default AnimatedText;

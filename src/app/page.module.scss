@@ -40,7 +40,6 @@
     font-size: 16px;
     display: block;
     margin-top: 16px;
-
   }
   .stuff {
     text-decoration: underline;
@@ -49,5 +48,18 @@
     text-decoration: none;
     color: inherit;
     font-weight: bold;
+  }
+
+  @media (max-width: 922px) {
+    .heading {
+      font-size: 65px;
+      line-height: 63px;
+    }
+  }
+  @media (max-width: 480px) {
+    .heading {
+      font-size: 48px;
+      line-height: 52px;
+    }
   }
 }
