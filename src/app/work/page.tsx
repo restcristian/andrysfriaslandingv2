@@ -2,6 +2,10 @@ import Page from "@/components/Page/Page";
 import React from "react";
 import styles from "./work.module.scss";
 import peopleFusionImage from "@/assets/images/people_fusion_works@2x.cc16cbed.png";
+import pantherSuiteImage from "@/assets/images/panther@2x.8db94f47.png";
+import haidyImage from "@/assets/images/haidy@2x.59ef8fc0.png";
+import SicaImage from "@/assets/images/Sica@2x.f4877532.png";
+
 import { Project } from "./types";
 import { ProjectSlide } from "./ProjectSlide";
 
@@ -14,6 +18,39 @@ const projects: Project[] = [
     imageUrl: peopleFusionImage.src,
     role: "Designer",
     client: "Univision",
+    year: 2017,
+    url: "#",
+  },
+  {
+    title: "PantherSuite",
+    type: "Website",
+    description:
+      "Panther Suite is a project that contains a library of concerts near you. The idea is to make easy the way you find for every concert. This project is still in development to optimize the search.",
+    imageUrl: pantherSuiteImage.src,
+    role: "UI / UX Designer",
+    client: "Personal",
+    year: 2017,
+    url: "#",
+  },
+  {
+    title: "Haidy Cruz",
+    type: "E-commerce",
+    description:
+      "Haidy Cruz is a personal trainer and nutritional guide from Dominican Republic, known as the Queen of fitness with several awards in competitions.",
+    imageUrl: haidyImage.src,
+    role: "UI / UX Designer",
+    client: "Haidy Cruz",
+    year: 2019,
+    url: "#",
+  },
+  {
+    title: "SICA",
+    type: "Branding",
+    description:
+      "The Central American Integration System (SICA) is an international organization that has been leading the economic and political side of Central American states since 1993.",
+    imageUrl: SicaImage.src,
+    role: "Branding Designer",
+    client: "DR Goverment",
     year: 2017,
     url: "#",
   },
