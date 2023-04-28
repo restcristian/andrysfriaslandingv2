@@ -1,10 +1,12 @@
-import Navigation from '@/components/Navigation/Navigation'
-import styles from './globals.module.scss'
+"use client";
+import Navigation from "@/components/Navigation/Navigation";
+import styles from "./globals.module.scss";
+import { AnimatePresence } from "framer-motion";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -15,8 +17,8 @@ export default function RootLayout({
       <head />
       <body className={styles.body}>
         <Navigation />
-        {children}
-        </body>
+        <AnimatePresence>{children}</AnimatePresence>
+      </body>
     </html>
-  )
+  );
 }
