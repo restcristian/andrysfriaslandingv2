@@ -3,7 +3,12 @@ import classnames from "classnames";
 import Link from "next/link";
 import { Project } from "./types";
 
-export const ProjectSlide: React.FC<{ project: Project }> = ({ project }) => {
+interface Props {
+  project: Project;
+  isActive: boolean;
+}
+
+export const ProjectSlide: React.FC<Props> = ({ project, isActive }) => {
   const {
     year,
     client,
@@ -15,7 +20,14 @@ export const ProjectSlide: React.FC<{ project: Project }> = ({ project }) => {
     url,
   } = project;
   return (
-    <div className={styles.slide}>
+    <div
+      className={classnames([
+        styles.slide,
+        {
+          [styles.isActive]: isActive,
+        },
+      ])}
+    >
       <div className={classnames([styles.slideColumn, styles.columnPic])}>
         <img src={imageUrl} />
       </div>

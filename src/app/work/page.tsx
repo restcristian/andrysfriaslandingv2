@@ -1,5 +1,6 @@
+"use client";
 import Page from "@/components/Page/Page";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./work.module.scss";
 import peopleFusionImage from "@/assets/images/people_fusion_works@2x.cc16cbed.png";
 import pantherSuiteImage from "@/assets/images/panther@2x.8db94f47.png";
@@ -57,11 +58,16 @@ const projects: Project[] = [
 ];
 
 export default function Work() {
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   return (
     <Page>
       <div className={styles.work}>
-        {projects.map((project) => (
-          <ProjectSlide project={project} key={project.title} />
+        {projects.map((project, index) => (
+          <ProjectSlide
+            project={project}
+            key={project.title}
+            isActive={index === activeSlideIndex}
+          />
         ))}
       </div>
     </Page>
