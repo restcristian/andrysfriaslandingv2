@@ -9,6 +9,7 @@ import SicaImage from "@/assets/images/Sica@2x.f4877532.png";
 
 import { Project } from "./types";
 import { ProjectSlide } from "./ProjectSlide";
+import { useMyScroll } from "@/hooks";
 
 const projects: Project[] = [
   {
@@ -59,6 +60,9 @@ const projects: Project[] = [
 
 export default function Work() {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(null);
+  const { direction } = useMyScroll();
+  
   return (
     <Page>
       <div className={styles.work}>

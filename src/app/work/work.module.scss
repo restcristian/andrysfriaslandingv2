@@ -21,13 +21,6 @@
     left: 50%;
     width: 100%;
     transform: translate(-50%, -50%);
-    opacity: 0;
-    visibility: hidden;
-    
-    &.isActive {
-        opacity: 1;
-        visibility: visible;
-    }
   }
 
   .slideColumn {
@@ -45,6 +38,9 @@
   .columnInformation {
     width: 41.6666666667%;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .workType {
@@ -101,7 +97,12 @@
       justify-content: center;
       text-align: center;
       height: 72px;
-      transition: all 0.4s ease-in-out;
+      transition: background-color 0.4s ease-in-out;
+
+      &:hover {
+          background-color: white;
+          color: black;
+      }
     }
   }
 
