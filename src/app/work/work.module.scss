@@ -5,19 +5,19 @@
   @include grid();
   padding: $padding-gap;
   height: 100%;
-  display: flex;
-  justify-content: center;
+  //   display: flex;
+  //   justify-content: center;
   flex: 1;
   flex-direction: column;
   position: absolute;
-  top:0;
+  top: 0;
   left: 50%;
   width: 100%;
   height: 100%;
   transform: translateX(-50%);
   box-sizing: border-box;
   div {
-      box-sizing: border-box;
+    box-sizing: border-box;
   }
   .slide {
     display: flex;
@@ -26,6 +26,7 @@
     left: 50%;
     width: 100%;
     transform: translate(-50%, -50%);
+    max-width: 863px;
   }
 
   .slideColumn {
@@ -41,11 +42,12 @@
     }
   }
   .columnInformation {
-    width: 41.6666666667%;
+    flex: 1;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-left: 24px;
   }
 
   .workType {
@@ -105,8 +107,8 @@
       transition: background-color 0.4s ease-in-out;
 
       &:hover {
-          background-color: white;
-          color: black;
+        background-color: white;
+        color: black;
       }
     }
   }
@@ -138,4 +140,40 @@
       display: flex;
     }
   }
+}
+
+.workCounter {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: white;
+  z-index: 3;
+  font-family: "Montserrat", sans-serif;
+  font-size: 34px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: $padding-gap;
+}
+
+.workNumbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.workPipe {
+  padding: 0 4px;
+}
+
+.workTotal {
+  font-size: 18px;
+}
+
+.workCounterLabel {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 12px;
+  font-family: "Source Code Pro", monospace;
 }

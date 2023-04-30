@@ -77,12 +77,18 @@ export default function Work() {
     setActiveSlideIndex(-1);
   };
 
-  const onSlideExit = () => {
-    // nextSlide();
-  };
+  const onSlideExit = () => {};
 
   return (
     <Page>
+        <div className={styles.workCounter}>
+          <div className={styles.workNumbers}>
+            <span className={styles.workCurrent}>1</span>
+            <span className={styles.workPipe}>|</span>
+            <span className={styles.workTotal}>{projects.length}</span>
+          </div>
+          <div className={styles.workCounterLabel}>Projects</div>
+        </div>
       <div className={styles.work}>
         {projects.map((project, index) => (
           <ProjectSlide
