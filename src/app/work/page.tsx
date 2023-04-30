@@ -62,7 +62,25 @@ export default function Work() {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(null);
   const { direction } = useMyScroll();
-  
+
+  const nextSlide = () => {
+    setActiveSlideIndex((prev) => (prev + 1) % projects.length);
+  };
+
+  const previousSlide = () => {
+    setActiveSlideIndex((prev) =>
+      prev === 0 ? projects.length - 1 : prev - 1
+    );
+  };
+
+  const onSlideNext = () => {
+    setActiveSlideIndex(-1);
+  };
+
+  const onSlideExit = () => {
+    // nextSlide();
+  };
+
   return (
     <Page>
       <div className={styles.work}>
@@ -71,9 +89,19 @@ export default function Work() {
             project={project}
             key={project.title}
             isActive={index === activeSlideIndex}
+            onSlideExit={onSlideExit}
           />
         ))}
       </div>
+      <button
+        onClick={previousSlide}
+        style={{ zIndex: 600, position: "relative" }}
+      >
+        previous
+      </button>
+      <button onClick={nextSlide} style={{ zIndex: 600, position: "relative" }}>
+        next
+      </button>
     </Page>
   );
 }

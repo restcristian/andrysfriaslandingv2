@@ -7,9 +7,14 @@ import { motion, AnimatePresence } from "framer-motion";
 interface Props {
   project: Project;
   isActive: boolean;
+  onSlideExit: () => void;
 }
 
-export const ProjectSlide: React.FC<Props> = ({ project, isActive }) => {
+export const ProjectSlide: React.FC<Props> = ({
+  project,
+  isActive,
+  onSlideExit,
+}) => {
   const {
     year,
     client,
@@ -22,7 +27,7 @@ export const ProjectSlide: React.FC<Props> = ({ project, isActive }) => {
   } = project;
 
   return (
-    <AnimatePresence>
+    <AnimatePresence onExitComplete={onSlideExit}>
       {isActive && (
         <motion.div
           className={classnames([
@@ -41,10 +46,18 @@ export const ProjectSlide: React.FC<Props> = ({ project, isActive }) => {
             animate={{
               opacity: 1,
               translateX: 0,
+              transition: {
+                duration: 0.7,
+                delay: 0.7,
+                ease: "easeInOut",
+              },
             }}
-            transition={{
-              duration: .7,
-              ease: "easeInOut"
+            exit={{
+              opacity: 0,
+              translateX: -30,
+              transition: {
+                duration: 0.4,
+              },
             }}
           >
             <img src={imageUrl} />
@@ -61,10 +74,18 @@ export const ProjectSlide: React.FC<Props> = ({ project, isActive }) => {
             animate={{
               opacity: 1,
               translateX: 0,
+              transition: {
+                duration: 0.7,
+                delay: 0.7,
+                ease: "easeInOut",
+              },
             }}
-            transition={{
-              duration: .7,
-              ease: "easeInOut"
+            exit={{
+              opacity: 0,
+              translateX: 30,
+              transition: {
+                duration: 0.4,
+              },
             }}
           >
             <div className={classnames([styles.workType])}>
