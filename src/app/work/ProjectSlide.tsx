@@ -3,6 +3,8 @@ import classnames from "classnames";
 import Link from "next/link";
 import { Project } from "./types";
 import { motion, AnimatePresence } from "framer-motion";
+import { useAppStore } from "@/store/appStore";
+import { useEffect } from "react";
 
 interface Props {
   project: Project;
@@ -28,12 +30,25 @@ export const ProjectSlide: React.FC<Props> = ({
     title,
     role,
     url,
+    backgroundColor,
+    textColor,
   } = project;
+
+  const { changeThemeColors } = useAppStore();
+
+  useEffect(() => {
+    if (isActive) {
+      changeThemeColors(backgroundColor, textColor);
+    }
+  }, [isActive]);
 
   return (
     <AnimatePresence onExitComplete={onSlideExit}>
       {isActive && (
         <motion.div
+          style={{
+            color: textColor,
+          }}
           className={classnames([
             styles.slide,
             {
@@ -125,7 +140,15 @@ export const ProjectSlide: React.FC<Props> = ({
                 </div>
               </div>
             </div>
-            <div className={classnames([styles.viewMore])}>
+            <div
+              className={classnames([
+                styles.viewMore,
+                {
+                  [styles.white]:
+                    textColor === "white" || textColor.includes("#fff"),
+                },
+              ])}
+            >
               <Link href={url}>View more</Link>
             </div>
           </motion.div>

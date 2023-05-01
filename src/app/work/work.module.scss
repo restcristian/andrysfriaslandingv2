@@ -43,7 +43,7 @@
   }
   .columnInformation {
     flex: 1;
-    color: white;
+    color: inherit;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,9 +89,20 @@
 
   .viewMore {
     margin-top: 44px;
+    &.white {
+      > a {
+        color: white;
+        border-color: white;
+
+        &:hover {
+          background-color: white;
+          color: black;
+        }
+      }
+    }
     > a {
-      border: 1px solid #fff;
-      color: #fff;
+      color: inherit;
+      border: 1px solid currentColor;
       text-decoration: none;
       width: 236px;
       font-family: "Source Code Pro", monospace;
@@ -107,8 +118,8 @@
       transition: background-color 0.4s ease-in-out;
 
       &:hover {
-        background-color: white;
-        color: black;
+        background-color: black;
+        color: white;
       }
     }
   }
@@ -146,7 +157,6 @@
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  color: white;
   z-index: 3;
   font-family: "Montserrat", sans-serif;
   font-size: 34px;
@@ -156,7 +166,7 @@
   text-align: center;
   padding: $padding-gap;
 
-  @media (max-width: 1024px ){
+  @media (max-width: 1024px) {
     top: 0;
     transform: none;
     right: 0;

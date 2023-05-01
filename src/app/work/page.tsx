@@ -11,6 +11,7 @@ import SicaImage from "@/assets/images/Sica@2x.f4877532.png";
 import { Project } from "./types";
 import { ProjectSlide } from "./ProjectSlide";
 import { useMyScroll } from "@/hooks";
+import { useAppStore } from "@/store/appStore";
 
 const projects: Project[] = [
   {
@@ -23,6 +24,8 @@ const projects: Project[] = [
     client: "Univision",
     year: 2017,
     url: "#",
+    backgroundColor: "#6653a6",
+    textColor: "white",
   },
   {
     title: "PantherSuite",
@@ -34,6 +37,8 @@ const projects: Project[] = [
     client: "Personal",
     year: 2017,
     url: "#",
+    backgroundColor: "#fff",
+    textColor: "black",
   },
   {
     title: "Haidy Cruz",
@@ -45,6 +50,8 @@ const projects: Project[] = [
     client: "Haidy Cruz",
     year: 2019,
     url: "#",
+    backgroundColor: "#f0494c",
+    textColor: "white",
   },
   {
     title: "SICA",
@@ -56,6 +63,8 @@ const projects: Project[] = [
     client: "DR Goverment",
     year: 2017,
     url: "#",
+    backgroundColor: "#edf2f9",
+    textColor: "black",
   },
 ];
 
@@ -64,7 +73,7 @@ export default function Work() {
   const [isAnimating, setIsAnimating] = useState(true);
   const { direction } = useMyScroll();
   const [scope, animate] = useAnimate();
-
+  const {textColor} = useAppStore();
   const nextSlide = () => {
     setActiveSlideIndex((prev) => (prev + 1) % projects.length);
   };
@@ -74,7 +83,6 @@ export default function Work() {
       prev === 0 ? projects.length - 1 : prev - 1
     );
   };
-
 
   const enterAnimation = async () => {
     console.log(scope.current);
@@ -102,7 +110,7 @@ export default function Work() {
 
   return (
     <Page>
-      <div className={styles.workCounter}>
+      <div className={styles.workCounter} style={{color: textColor }}>
         <div className={styles.workNumbers}>
           <motion.span
             className={styles.workCurrent}
