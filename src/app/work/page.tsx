@@ -1,7 +1,8 @@
 "use client";
 import Page from "@/components/Page/Page";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "./work.module.scss";
+import { AnimatePresence, motion, useAnimate } from "framer-motion";
 import peopleFusionImage from "@/assets/images/people_fusion_works@2x.cc16cbed.png";
 import pantherSuiteImage from "@/assets/images/panther@2x.8db94f47.png";
 import haidyImage from "@/assets/images/haidy@2x.59ef8fc0.png";
@@ -60,8 +61,9 @@ const projects: Project[] = [
 
 export default function Work() {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(null);
+  const [isAnimating, setIsAnimating] = useState(true);
   const { direction } = useMyScroll();
+  const [scope, animate] = useAnimate();
 
   const nextSlide = () => {
     setActiveSlideIndex((prev) => (prev + 1) % projects.length);
@@ -73,29 +75,58 @@ export default function Work() {
     );
   };
 
-  const onSlideNext = () => {
-    setActiveSlideIndex(-1);
+
+  const enterAnimation = async () => {
+    console.log(scope.current);
+    scope.current.innerHTML = activeSlideIndex + 1;
+    await animate(scope.current, {
+      opacity: 1,
+      translateY: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeInOut",
+      },
+    });
+  };
+  const exitAnimation = async () => {
+    await animate(scope.current, { opacity: 0, translateY: -5 });
   };
 
-  const onSlideExit = () => {};
+  useEffect(() => {
+    if (!isAnimating) {
+      enterAnimation();
+    } else {
+      exitAnimation();
+    }
+  }, [isAnimating]);
 
   return (
     <Page>
-        <div className={styles.workCounter}>
-          <div className={styles.workNumbers}>
-            <span className={styles.workCurrent}>1</span>
-            <span className={styles.workPipe}>|</span>
-            <span className={styles.workTotal}>{projects.length}</span>
-          </div>
-          <div className={styles.workCounterLabel}>Projects</div>
+      <div className={styles.workCounter}>
+        <div className={styles.workNumbers}>
+          <motion.span
+            className={styles.workCurrent}
+            ref={scope}
+            initial={{
+              opacity: 0,
+              translateY: -5,
+            }}
+          />
+
+          <span className={styles.workPipe}>|</span>
+          <span className={styles.workTotal}>{projects.length}</span>
         </div>
+        <div className={styles.workCounterLabel}>Projects</div>
+      </div>
       <div className={styles.work}>
         {projects.map((project, index) => (
           <ProjectSlide
             project={project}
             key={project.title}
             isActive={index === activeSlideIndex}
-            onSlideExit={onSlideExit}
+            onSlideExit={() => setIsAnimating(false)}
+            onSlideEnterComplete={() => setIsAnimating(false)}
+            onSlideEnter={() => setIsAnimating(true)}
           />
         ))}
       </div>

@@ -8,12 +8,16 @@ interface Props {
   project: Project;
   isActive: boolean;
   onSlideExit: () => void;
+  onSlideEnter: () => void;
+  onSlideEnterComplete: () => void;
 }
 
 export const ProjectSlide: React.FC<Props> = ({
   project,
   isActive,
   onSlideExit,
+  onSlideEnterComplete,
+  onSlideEnter,
 }) => {
   const {
     year,
@@ -39,6 +43,8 @@ export const ProjectSlide: React.FC<Props> = ({
         >
           <motion.div
             className={classnames([styles.slideColumn, styles.columnPic])}
+            onAnimationStart={onSlideEnter}
+            onAnimationComplete={onSlideEnterComplete}
             initial={{
               opacity: 0,
               translateX: -30,
