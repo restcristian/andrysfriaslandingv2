@@ -98,6 +98,26 @@ export default function Work() {
     await animate(scope.current, { opacity: 0, translateY: -5 });
   };
 
+  // TODO: Fix bug on keyboard navigation.
+  useEffect(() => {
+    const onKeyUpHandler = (e: KeyboardEvent) => {
+      if (!isAnimating) {
+        if (e.code === "ArrowLeft" || e.keyCode === 37) {
+          previousSlide();
+          return;
+        }
+        if (e.code === "ArrowRight" || e.keyCode === 39) {
+          nextSlide();
+          return;
+        }
+      }
+    };
+    document.addEventListener("keyup", onKeyUpHandler);
+    return () => {
+      window.removeEventListener("keyup", onKeyUpHandler);
+    };
+  }, [isAnimating]);
+
   useEffect(() => {
     if (!isAnimating) {
       enterAnimation();
@@ -105,6 +125,7 @@ export default function Work() {
       exitAnimation();
     }
   }, [isAnimating]);
+
 
   return (
     <Page>
@@ -136,6 +157,7 @@ export default function Work() {
           />
         ))}
       </div>
+      {/* TODO: fix navigation counter bug */}
       <div className={styles.workArrowsContainer}>
         <button onClick={previousSlide}>
           <GrFormPreviousLink size={30} color={textColor} />
