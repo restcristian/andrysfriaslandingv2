@@ -1,16 +1,15 @@
 "use client";
 import Page from "@/components/Page/Page";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 import styles from "./work.module.scss";
-import { AnimatePresence, motion, useAnimate } from "framer-motion";
+import { motion, useAnimate } from "framer-motion";
 import peopleFusionImage from "@/assets/images/people_fusion_works@2x.cc16cbed.png";
 import pantherSuiteImage from "@/assets/images/panther@2x.8db94f47.png";
 import haidyImage from "@/assets/images/haidy@2x.59ef8fc0.png";
 import SicaImage from "@/assets/images/Sica@2x.f4877532.png";
-
 import { Project } from "./types";
 import { ProjectSlide } from "./ProjectSlide";
-import { useMyScroll } from "@/hooks";
 import { useAppStore } from "@/store/appStore";
 
 const projects: Project[] = [
@@ -71,9 +70,8 @@ const projects: Project[] = [
 export default function Work() {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(true);
-  const { direction } = useMyScroll();
   const [scope, animate] = useAnimate();
-  const {textColor} = useAppStore();
+  const { textColor } = useAppStore();
   const nextSlide = () => {
     setActiveSlideIndex((prev) => (prev + 1) % projects.length);
   };
@@ -110,7 +108,7 @@ export default function Work() {
 
   return (
     <Page>
-      <div className={styles.workCounter} style={{color: textColor }}>
+      <div className={styles.workCounter} style={{ color: textColor }}>
         <div className={styles.workNumbers}>
           <motion.span
             className={styles.workCurrent}
@@ -138,15 +136,14 @@ export default function Work() {
           />
         ))}
       </div>
-      <button
-        onClick={previousSlide}
-        style={{ zIndex: 600, position: "relative" }}
-      >
-        previous
-      </button>
-      <button onClick={nextSlide} style={{ zIndex: 600, position: "relative" }}>
-        next
-      </button>
+      <div className={styles.workArrowsContainer}>
+        <button onClick={previousSlide}>
+          <GrFormPreviousLink size={30} color={textColor} />
+        </button>
+        <button onClick={nextSlide}>
+          <GrFormNextLink size={30} color={textColor} />
+        </button>
+      </div>
     </Page>
   );
 }
