@@ -7,4 +7,6 @@ export interface Project {
   client: string;
   year: number;
   url: string;
+  backgroundColor: string;
+  textColor: string;
 }

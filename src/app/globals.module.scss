@@ -5,4 +5,7 @@
     background-color: $color-fake-sky-blue;
     font-family: "Montserrat", sans-serif;
     color: #333;
+    margin: 0;
+    padding: 8px;
+    transition: background-color .7s ease-in-out;
 }
