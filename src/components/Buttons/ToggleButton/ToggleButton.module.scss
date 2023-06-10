@@ -10,6 +10,7 @@
     transition: all 0.3s ease-in-out;
     outline: none;
     position: relative;
+    color: currentColor;
 
     &:hover{
         transform: scale(1.4);
@@ -20,7 +21,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: $color-mine-shaft;
+    background-color: currentColor;
   }
   > span {
     position: fixed;
