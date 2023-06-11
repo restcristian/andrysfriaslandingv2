@@ -1,7 +1,7 @@
 import React from "react";
 
 async function getData() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const res = await fetch("https://andrysfriaslandingv2-git-feat-specific-work-1-restcristian.vercel.app/api/works");
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 
