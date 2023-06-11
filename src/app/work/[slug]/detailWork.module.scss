@@ -1,0 +1,92 @@
+@import "../../../styles/constansts";
+.detailWork {
+  .banner {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+    margin: -8px -8px 0px -8px;
+
+    .bannerContainer {
+      @include grid();
+      position: relative;
+      z-index: 2;
+    }
+
+    .bannerText {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      width: 100%;
+      text-align: center;
+      font-size: 15vw;
+      font-weight: 600;
+      color: #a5a4b2;
+      text-transform: uppercase;
+      white-space: nowrap;
+      z-index: 1;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .description {
+    padding: 95px 0;
+    font-family: "Source Code Pro", monospace;
+    margin: 0 -8px;
+  }
+
+  .descriptionContainer {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .descriptionTitle {
+    font-size: 28px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+  }
+  .descriptionText {
+    line-height: 28px;
+  }
+
+  .descriptionTable {
+  }
+  .tableRow {
+    display: flex;
+    padding-top: 5px;
+  }
+  .tableHeader {
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  .tableHeader,
+  .tableCol {
+    flex: 1;
+  }
+  .tableCol {
+    line-height: 24px;
+  }
+
+  .screen {
+    background-color: white;
+    margin: 0 -8px;
+  }
+
+  
+  .screenContainer {
+    @include grid();
+    width: 50%;
+    img {
+        margin: -85px 0;
+      max-width: 100%;
+    }
+  }
+}
