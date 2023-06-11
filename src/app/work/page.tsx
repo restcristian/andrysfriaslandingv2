@@ -15,7 +15,7 @@ import { useAppStore } from "@/store/appStore";
 const projects: Project[] = [
   {
     title: "Fusion TV",
-    type: "Email Marketing",
+    type: "Email Marketing!",
     description:
       "Fusion is a channel from the Univision network focused to hispanic americans. In this project the goal was achieving an email to deliver the most latest and relevant content for the audience.",
     imageUrl: peopleFusionImage.src,

@@ -1,9 +1,34 @@
-import React from 'react'
+import React from "react";
 
-function WorkPage() {
-  return (
-    <div>WorkPage</div>
-  )
+async function getData() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  // Recommendation: handle errors
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
 }
 
-export default WorkPage
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+export default async function WorkPage({ params: { slug } }: Props) {
+  const res = await getData()
+  return (
+    <div>
+      <div>banner</div>
+      <div>Description</div>
+      <div>screen</div>
+      <div>palette</div>
+      <div>palete</div>
+    </div>
+  );
+}
