@@ -1,0 +1,62 @@
+import { detailedProjects } from "@/utils/mockedDetailedProjects";
+import React from "react";
+import styles from "./detailWork.module.scss";
+
+async function getData(slug: string) {
+  const currentProject = detailedProjects.find(
+    (project) => project.slug === slug
+  );
+  return currentProject;
+}
+
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+export default async function WorkPage({ params: { slug } }: Props) {
+  const project = await getData(slug);
+  console.log("res", project);
+  return (
+    <div className={styles.detailWork}>
+      <div className={styles.banner}>
+        <div className={styles.bannerContainer}>
+          <img src={project?.bannerImageUrl} alt="image" />
+        </div>
+        <span className={styles.bannerText}>{project?.slug}</span>
+      </div>
+      <div className={styles.description}>
+        <div className={styles.descriptionContainer}>
+          <span className={styles.descriptionTitle}>
+            {project?.description.title}
+          </span>
+          <p className={styles.descriptionText}>{project?.description.text}</p>
+          <div className={styles.descriptionTable}>
+            <div className={styles.tableRow}>
+              <div className={styles.tableHeader}>Role</div>
+              <div className={styles.tableHeader}>Client</div>
+              <div className={styles.tableHeader}>Year</div>
+            </div>
+            <div className={styles.tableRow}>
+              <div className={styles.tableCol}>{project?.description.role}</div>
+              <div className={styles.tableCol}>
+                {project?.description.client}
+              </div>
+              <div className={styles.tableCol}>{project?.description.year}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.screen}>
+        <div className={styles.screenContainer}>
+          <div className={styles.screenImgContainer}>
+            <img src={project?.screen.imageUrl} />
+          </div>
+        </div>
+      </div>
+      <div>palette</div>
+      <div>palete</div>
+    </div>
+  );
+}

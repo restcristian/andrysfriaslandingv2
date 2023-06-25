@@ -1,6 +1,6 @@
 import React from "react";
 
-type Props = React.SVGProps<SVGAElement>;
+type Props = React.SVGProps<SVGAElement | any>;
 
 const Logo: React.FC<Props> = (props) => {
   return (
