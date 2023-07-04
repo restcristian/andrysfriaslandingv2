@@ -82,17 +82,16 @@
     margin: 0 -8px;
   }
 
-  
   .screenContainer {
     @include grid();
     width: 50%;
     img {
-        margin: -85px 0;
+      margin: -85px 0;
       max-width: 100%;
     }
   }
 
-  .paletteColors{
+  .paletteColors {
     @include grid();
     width: 50%;
     padding: 95px 0;
@@ -126,6 +125,34 @@
     font-family: "Source Code Pro", monospace;
     color: $color-black-russian;
     font-size: 16px;
-    line-height: 32px
+    line-height: 32px;
+  }
+
+  .frame {
+    background-color: #fff;
+    margin: 0 -8px;
+  }
+
+  .frameWrapper {
+    @include grid();
+    display: flex;
+    justify-content: center;
+  }
+
+  .frameSquare {
+    width: 66.6666666667%;
+    display: flex;
+    justify-content: center;
+    padding:100px 0;
+    background-color: $color-eastern-breeze;
+    margin-top: -90px;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .frameImageContainer {
+    width: 50%;
   }
 }

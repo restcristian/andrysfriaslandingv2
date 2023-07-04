@@ -1,5 +1,6 @@
 import peopleFusionImage from "@/assets/images/people_fusion2@2x.af13e467.png";
 import fusionScreen from "@/assets/images/screens@2x.c1666b66.png";
+import fusionTVEmail from "@/assets/images/Univision_Fusion-TV-RoundUp-Email-bottom1@2x.4f6f65d2.png"
 export interface DetailedProject {
   slug: string;
   bannerImageUrl: string;
@@ -17,6 +18,9 @@ export interface DetailedProject {
     text: string;
     colors: string[]
   };
+  frame: {
+    image: string
+  }
 }
 export const detailedProjects: DetailedProject[] = [
   {
@@ -36,6 +40,9 @@ export const detailedProjects: DetailedProject[] = [
       text: 'High contrast colors from Fusion TV rebranding to highlight daily emails and the special announcement ones.',
       colors: ["#6652a6", "#dbe0e6", "#24242c"]
     },
+    frame: {
+      image: fusionTVEmail.src
+    }
   },
 ];
 export function json() {
