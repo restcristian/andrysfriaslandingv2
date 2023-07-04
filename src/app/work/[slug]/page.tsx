@@ -55,7 +55,17 @@ export default async function WorkPage({ params: { slug } }: Props) {
           </div>
         </div>
       </div>
-      <div>palette</div>
+      <div className={styles.paletteColors}>
+        <span className={styles.paletteColorTitle}>Palette Colors</span>
+        <ul className={styles.palettetColorsContainer}>
+          {project?.paletteColors.colors.map(color => (
+            <li key={color} style={{backgroundColor: color}}></li>
+          ))}
+        </ul>
+        <p className={styles.paletteColorsText}>
+          {project?.paletteColors.text}
+        </p>
+      </div>
       <div>palete</div>
     </div>
   );

@@ -1,4 +1,6 @@
 @import "../../../styles/constansts";
+@import "../../../styles/colors";
+
 .detailWork {
   .banner {
     min-height: calc(100vh - 100px);
@@ -88,5 +90,42 @@
         margin: -85px 0;
       max-width: 100%;
     }
+  }
+
+  .paletteColors{
+    @include grid();
+    width: 50%;
+    padding: 95px 0;
+  }
+
+  .paletteColorTitle {
+    font-family: "Montserrat", sans-serif;
+    color: $color-prophet-violet;
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  .palettetColorsContainer {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      &:not(:last-child) {
+        margin-right: 50px;
+      }
+    }
+  }
+  .paletteColorsText {
+    margin: 0;
+    margin-top: 20px;
+    font-family: "Source Code Pro", monospace;
+    color: $color-black-russian;
+    font-size: 16px;
+    line-height: 32px
   }
 }

@@ -12,7 +12,11 @@ export interface DetailedProject {
   };
   screen: {
     imageUrl: string;
-  }
+  };
+  paletteColors: {
+    text: string;
+    colors: string[]
+  };
 }
 export const detailedProjects: DetailedProject[] = [
   {
@@ -26,11 +30,14 @@ export const detailedProjects: DetailedProject[] = [
       year: 2017,
     },
     screen: {
-        imageUrl: fusionScreen.src
-    }
+      imageUrl: fusionScreen.src,
+    },
+    paletteColors: {
+      text: 'High contrast colors from Fusion TV rebranding to highlight daily emails and the special announcement ones.',
+      colors: ["#6652a6", "#dbe0e6", "#24242c"]
+    },
   },
 ];
 export function json() {
   throw new Error("Function not implemented.");
 }
-
