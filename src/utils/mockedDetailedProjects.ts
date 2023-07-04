@@ -20,6 +20,10 @@ export interface DetailedProject {
   };
   frame: {
     image: string
+  },
+  special: {
+    title: string,
+    text: string
   }
 }
 export const detailedProjects: DetailedProject[] = [
@@ -42,6 +46,10 @@ export const detailedProjects: DetailedProject[] = [
     },
     frame: {
       image: fusionTVEmail.src
+    },
+    special: {
+      title: "Special Announcements",
+      text: " As past of this rebranding campaign the following email was created with high contrast colors and animated gifs as a hero image, to impact the viewer to click the call action button."
     }
   },
 ];

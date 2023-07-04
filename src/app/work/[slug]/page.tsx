@@ -75,6 +75,14 @@ export default async function WorkPage({ params: { slug } }: Props) {
           </div>
         </div>
       </div>
+      <div className={styles.frame}>
+        <div className={styles.special}>
+          <span className={styles.specialTitle}>{project?.special.title}</span>
+          <p className={styles.specialText}>
+            {project?.special.text}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

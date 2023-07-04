@@ -155,4 +155,24 @@
   .frameImageContainer {
     width: 50%;
   }
+
+  .special {
+    @include grid();
+    width: 50%;
+    padding: 100px 0;
+  }
+
+  .specialTitle {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+  }
+
+  .specialText {
+    font-family: "Source Code Pro", monospace;
+    font-size: 16px;
+    line-height: 32px;
+    margin: 0;
+    margin-top: 9px;
+  }
 }
