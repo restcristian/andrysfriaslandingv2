@@ -1,6 +1,7 @@
 import peopleFusionImage from "@/assets/images/people_fusion2@2x.af13e467.png";
 import fusionScreen from "@/assets/images/screens@2x.c1666b66.png";
 import fusionTVEmail from "@/assets/images/Univision_Fusion-TV-RoundUp-Email-bottom1@2x.4f6f65d2.png"
+import shadeImage from "@/assets/images/shade2.52e50a75.gif"
 export interface DetailedProject {
   slug: string;
   bannerImageUrl: string;
@@ -24,6 +25,10 @@ export interface DetailedProject {
   special: {
     title: string,
     text: string
+  },
+  secondScreen: {
+    image: string,
+    backgroundColor: string
   }
 }
 export const detailedProjects: DetailedProject[] = [
@@ -49,7 +54,11 @@ export const detailedProjects: DetailedProject[] = [
     },
     special: {
       title: "Special Announcements",
-      text: " As past of this rebranding campaign the following email was created with high contrast colors and animated gifs as a hero image, to impact the viewer to click the call action button."
+      text: "As past of this rebranding campaign the following email was created with high contrast colors and animated gifs as a hero image, to impact the viewer to click the call action button."
+    },
+    secondScreen: {
+      image: shadeImage.src,
+      backgroundColor: "#6653a6"
     }
   },
 ];

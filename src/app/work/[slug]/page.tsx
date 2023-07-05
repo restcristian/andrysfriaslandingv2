@@ -78,9 +78,17 @@ export default async function WorkPage({ params: { slug } }: Props) {
       <div className={styles.frame}>
         <div className={styles.special}>
           <span className={styles.specialTitle}>{project?.special.title}</span>
-          <p className={styles.specialText}>
-            {project?.special.text}
-          </p>
+          <p className={styles.specialText}>{project?.special.text}</p>
+        </div>
+      </div>
+      <div
+        className={styles.secondScreen}
+        style={{ backgroundColor: project?.secondScreen.backgroundColor }}
+      >
+        <div className={styles.secondScreenWrapper}>
+          <div className={styles.secondScreenImageContainer}>
+            <img src={project?.secondScreen.image} />
+          </div>
         </div>
       </div>
     </div>
