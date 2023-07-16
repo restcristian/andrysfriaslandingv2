@@ -7,7 +7,10 @@ import pantherSuiteNextImage from "@/assets/images/panther@2x.8db94f47.png"
 
 export interface DetailedProject {
   slug: string;
-  bannerImageUrl: string;
+  banner: {
+    image: string;
+    backgroundColor: string
+  },
   description: {
     title: string;
     text: string;
@@ -59,7 +62,11 @@ export interface DetailedProject {
 export const detailedProjects: DetailedProject[] = [
   {
     slug: "fusion-tv",
-    bannerImageUrl: peopleFusionImage.src,
+    
+    banner: {
+      image: peopleFusionImage.src,
+      backgroundColor: ''
+    },
     description: {
       title: "1. FusionTV",
       text: `Email marketing strategy based on different layouts of emails to remind the audience their favorite content as well as new incoming programs from the Fusion TV channel, part of the Univision network.`,

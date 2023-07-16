@@ -18,12 +18,12 @@ type Props = {
 
 export default async function WorkPage({ params: { slug } }: Props) {
   const project = await getData(slug);
-  console.log("res", project);
+
   return (
     <div className={styles.detailWork}>
       <div className={styles.banner}>
         <div className={styles.bannerContainer}>
-          <img src={project?.bannerImageUrl} alt="image" />
+          <img src={project?.banner.image} alt="image" />
         </div>
         <span className={styles.bannerText}>{project?.slug}</span>
       </div>
@@ -145,7 +145,10 @@ export default async function WorkPage({ params: { slug } }: Props) {
       </div>
       <div className={styles.nextProject}>
         <img src={project?.nextProject.image} />
-        <div className={styles.nextProjectInfo} style={{color: project?.nextProject.textColor}}>
+        <div
+          className={styles.nextProjectInfo}
+          style={{ color: project?.nextProject.textColor }}
+        >
           <a
             className={styles.nextProjectLink}
             href={`${project?.nextProject.slug}`}
