@@ -27,7 +27,13 @@ export default async function WorkPage({ params: { slug } }: Props) {
         </div>
         <span className={styles.bannerText}>{project?.slug}</span>
       </div>
-      <div className={styles.description}>
+      <div
+        className={styles.description}
+        style={{
+          backgroundColor: project?.description.backgroundColor,
+          color: project?.description.textColor,
+        }}
+      >
         <div className={styles.descriptionContainer}>
           <span className={styles.descriptionTitle}>
             {project?.description.title}
@@ -50,33 +56,58 @@ export default async function WorkPage({ params: { slug } }: Props) {
         </div>
       </div>
       <div className={styles.screen}>
-        <div className={styles.screenContainer}>
-          <div className={styles.screenImgContainer}>
+        <div
+          className={classNames(styles.screenContainer, {
+            [styles[`mt-${124}`]]: project?.screen.hasBorder,
+          })}
+        >
+          <div
+            className={classNames(styles.screenImgContainer, {
+              [styles.border]: project?.screen.hasBorder,
+            })}
+            style={{ borderColor: project?.screen.borderColor }}
+          >
             <img src={project?.screen.imageUrl} />
           </div>
         </div>
       </div>
-      <div className={styles.paletteColors}>
-        <span className={styles.paletteColorTitle}>Palette Colors</span>
-        <ul className={styles.palettetColorsContainer}>
-          {project?.paletteColors.colors.map((color) => (
-            <li key={color} style={{ backgroundColor: color }}></li>
-          ))}
-        </ul>
-        <p className={styles.paletteColorsText}>
-          {project?.paletteColors.text}
-        </p>
+      <div
+        className={styles.paletteColors}
+        style={{ backgroundColor: project?.paletteColors.backgroundColor }}
+      >
+        <div className={styles.paletteColorsWrapper}>
+          <span
+            className={styles.paletteColorTitle}
+            style={{ color: project?.paletteColors.textColor }}
+          >
+            Palette Colors
+          </span>
+          <ul className={styles.palettetColorsContainer}>
+            {project?.paletteColors.colors.map((color) => (
+              <li key={color} style={{ backgroundColor: color }}></li>
+            ))}
+          </ul>
+          <p className={styles.paletteColorsText}>
+            {project?.paletteColors.text}
+          </p>
+        </div>
       </div>
       <div className={styles.frame}>
         <div className={styles.frameWrapper}>
-          <div className={styles.frameSquare}>
+          <div
+            className={styles.frameSquare}
+            style={{ backgroundColor: project?.frame.borderColor }}
+          >
             <div className={styles.frameImageContainer}>
               <img src={project?.frame.image} />
             </div>
           </div>
         </div>
       </div>
-      <div className={styles.frame}>
+      <div
+        className={styles.frame}
+        style={{ color: project?.special.textColor }}
+      >
         <div className={styles.special}>
           <span className={styles.specialTitle}>{project?.special.title}</span>
           <p className={styles.specialText}>{project?.special.text}</p>
@@ -92,15 +123,19 @@ export default async function WorkPage({ params: { slug } }: Props) {
           </div>
         </div>
       </div>
-      <div className={classNames(styles.frame, styles.thirdScreen)}>
+      <div
+        className={classNames(styles.frame, styles.thirdScreen)}
+        style={{ color: project?.thirdScreen.textColor }}
+      >
         <div className={styles.special}>
-          <div
-            className={classNames(
-              styles.thirdScreenImageContainer,
-              styles.marginOffset
-            )}
-          >
-            <img src={project?.thirdScreen.image} />
+          <div className={classNames(styles.thirdScreenImageContainer)}>
+            <img
+              src={project?.thirdScreen.image}
+              className={classNames({
+                [styles[`minus-mt-${100}`]]:
+                  project?.thirdScreen.hasImageOffset,
+              })}
+            />
           </div>
           <span className={styles.specialTitle}>
             {project?.thirdScreen.title}
@@ -110,7 +145,7 @@ export default async function WorkPage({ params: { slug } }: Props) {
       </div>
       <div className={styles.nextProject}>
         <img src={project?.nextProject.image} />
-        <div className={styles.nextProjectInfo}>
+        <div className={styles.nextProjectInfo} style={{color: project?.nextProject.textColor}}>
           <a
             className={styles.nextProjectLink}
             href={`${project?.nextProject.slug}`}

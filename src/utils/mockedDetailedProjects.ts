@@ -14,20 +14,29 @@ export interface DetailedProject {
     role: string;
     client: string;
     year: number;
+    backgroundColor: string;
+    textColor: string;
   };
   screen: {
     imageUrl: string;
+    hasBorder?: boolean;
+    borderColor?: string
+    
   };
   paletteColors: {
     text: string;
     colors: string[];
+    textColor: string;
+    backgroundColor: string;
   };
   frame: {
     image: string;
+    borderColor: string;
   };
   special: {
     title: string;
     text: string;
+    textColor: string
   };
   secondScreen: {
     image: string;
@@ -37,11 +46,14 @@ export interface DetailedProject {
     title: string;
     text: string;
     image?: string;
+    textColor: string;
+    hasImageOffset?: boolean
   };
   nextProject: {
     image: string;
     title: string;
     slug: string
+    textColor: string
   },
 }
 export const detailedProjects: DetailedProject[] = [
@@ -54,20 +66,29 @@ export const detailedProjects: DetailedProject[] = [
       role: "Art Direction,\n Head Designer\n,Animator",
       client: "Univision",
       year: 2017,
+      backgroundColor:"#6653a6",
+      textColor: 'white'
     },
     screen: {
       imageUrl: fusionScreen.src,
+      hasBorder: false,
+      borderColor: '#beecfa',
+      
     },
     paletteColors: {
       text: "High contrast colors from Fusion TV rebranding to highlight daily emails and the special announcement ones.",
       colors: ["#6652a6", "#dbe0e6", "#24242c"],
+      backgroundColor: '#f2f2f2',
+      textColor: '#6653a6'
     },
     frame: {
       image: fusionTVEmail.src,
+      borderColor: "#dbe0e6"
     },
     special: {
       title: "Special Announcements",
       text: "As past of this rebranding campaign the following email was created with high contrast colors and animated gifs as a hero image, to impact the viewer to click the call action button.",
+      textColor: '#333'
     },
     secondScreen: {
       image: shadeImage.src,
@@ -76,12 +97,15 @@ export const detailedProjects: DetailedProject[] = [
     thirdScreen: {
       title: "My team work",
       text: "While I was working in Theorem LC. for 5 years as a designer, I had developed skills such as email design as well as email development for different brands from many industries such as education, medicine, fashion, entertainment and others.",
-      image: shadeTabletImage.src
+      image: shadeTabletImage.src,
+      textColor: '#333',
+      hasImageOffset: true
     },
     nextProject: {
       image: pantherSuiteNextImage.src,
       title: 'Panther Suite',
-      slug: 'panthersuite'
+      slug: 'panthersuite',
+      textColor: '#beecfa'
     }
   },
 ];

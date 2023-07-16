@@ -1,6 +1,7 @@
 @import "../../../styles/constansts";
 @import "../../../styles/colors";
 
+
 .detailWork {
   .banner {
     min-height: calc(100vh - 100px);
@@ -43,6 +44,7 @@
     padding: 95px 0;
     font-family: "Source Code Pro", monospace;
     margin: 0 -8px;
+    background-color: red;
   }
 
   .descriptionContainer {
@@ -79,6 +81,7 @@
 
   .screen {
     background-color: white;
+    display: flex;
     margin: 0 -8px;
   }
 
@@ -91,7 +94,15 @@
     }
   }
 
+  .screenImgContainer {
+    display: flex
+  }
+
   .paletteColors {
+    margin: 0 -8px;
+  }
+
+  .paletteColorsWrapper {
     @include grid();
     width: 50%;
     padding: 95px 0;
@@ -267,4 +278,20 @@
       z-index: 1;
     }
   }
+
+  .border {
+    border-top-width: 70px;
+    border-bottom-width: 70px;
+    border-left-width: 50px;
+    border-right-width: 55px;
+    border-style: solid;
+    margin-top: -66px;
+    margin-bottom: -66px;
+  }
+
+  .noOverlap {
+    margin: 0;
+  }
+
+  @include margins()
 }
