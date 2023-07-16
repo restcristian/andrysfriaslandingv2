@@ -1,4 +1,5 @@
 import { detailedProjects } from "@/utils/mockedDetailedProjects";
+import classNames from "classnames";
 import React from "react";
 import styles from "./detailWork.module.scss";
 
@@ -89,6 +90,22 @@ export default async function WorkPage({ params: { slug } }: Props) {
           <div className={styles.secondScreenImageContainer}>
             <img src={project?.secondScreen.image} />
           </div>
+        </div>
+      </div>
+      <div className={classNames(styles.frame, styles.thirdScreen)}>
+        <div className={styles.special}>
+          <div
+            className={classNames(
+              styles.thirdScreenImageContainer,
+              styles.marginOffset
+            )}
+          >
+            <img src={project?.thirdScreen.image} />
+          </div>
+          <span className={styles.specialTitle}>
+            {project?.thirdScreen.title}
+          </span>
+          <p className={styles.specialText}>{project?.thirdScreen.text}</p>
         </div>
       </div>
     </div>

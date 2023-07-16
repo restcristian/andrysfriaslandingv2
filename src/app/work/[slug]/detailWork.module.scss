@@ -143,7 +143,7 @@
     width: 66.6666666667%;
     display: flex;
     justify-content: center;
-    padding:100px 0;
+    padding: 100px 0;
     background-color: $color-eastern-breeze;
     margin-top: -90px;
     img {
@@ -175,7 +175,7 @@
     margin: 0;
     margin-top: 9px;
   }
-  
+
   .secondScreen {
     padding: 95px 0;
     margin: 0 -8px;
@@ -186,13 +186,30 @@
     display: flex;
     justify-content: center;
   }
-  
+
   .secondScreenImageContainer {
     width: 50%;
     img {
       max-width: 100%;
       height: auto;
     }
+  }
 
+  .thirdScreen {
+    .special {
+      padding: 0;
+    }
+    .thirdScreenImageContainer {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .marginOffset {
+    img {
+      margin-top: -100px;
+    }
   }
 }

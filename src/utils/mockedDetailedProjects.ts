@@ -1,7 +1,8 @@
 import peopleFusionImage from "@/assets/images/people_fusion2@2x.af13e467.png";
 import fusionScreen from "@/assets/images/screens@2x.c1666b66.png";
-import fusionTVEmail from "@/assets/images/Univision_Fusion-TV-RoundUp-Email-bottom1@2x.4f6f65d2.png"
-import shadeImage from "@/assets/images/shade2.52e50a75.gif"
+import fusionTVEmail from "@/assets/images/Univision_Fusion-TV-RoundUp-Email-bottom1@2x.4f6f65d2.png";
+import shadeImage from "@/assets/images/shade2.52e50a75.gif";
+import shadeTabletImage from "@/assets/images/tablet_fusion1@2x.7cd4f73e.png"
 export interface DetailedProject {
   slug: string;
   bannerImageUrl: string;
@@ -17,19 +18,24 @@ export interface DetailedProject {
   };
   paletteColors: {
     text: string;
-    colors: string[]
+    colors: string[];
   };
   frame: {
-    image: string
-  },
+    image: string;
+  };
   special: {
-    title: string,
-    text: string
-  },
+    title: string;
+    text: string;
+  };
   secondScreen: {
-    image: string,
-    backgroundColor: string
-  }
+    image: string;
+    backgroundColor: string;
+  };
+  thirdScreen: {
+    title: string;
+    text: string;
+    image?: string;
+  };
 }
 export const detailedProjects: DetailedProject[] = [
   {
@@ -46,19 +52,24 @@ export const detailedProjects: DetailedProject[] = [
       imageUrl: fusionScreen.src,
     },
     paletteColors: {
-      text: 'High contrast colors from Fusion TV rebranding to highlight daily emails and the special announcement ones.',
-      colors: ["#6652a6", "#dbe0e6", "#24242c"]
+      text: "High contrast colors from Fusion TV rebranding to highlight daily emails and the special announcement ones.",
+      colors: ["#6652a6", "#dbe0e6", "#24242c"],
     },
     frame: {
-      image: fusionTVEmail.src
+      image: fusionTVEmail.src,
     },
     special: {
       title: "Special Announcements",
-      text: "As past of this rebranding campaign the following email was created with high contrast colors and animated gifs as a hero image, to impact the viewer to click the call action button."
+      text: "As past of this rebranding campaign the following email was created with high contrast colors and animated gifs as a hero image, to impact the viewer to click the call action button.",
     },
     secondScreen: {
       image: shadeImage.src,
-      backgroundColor: "#6653a6"
+      backgroundColor: "#6653a6",
+    },
+    thirdScreen: {
+      title: "My team work",
+      text: "While I was working in Theorem LC. for 5 years as a designer, I had developed skills such as email design as well as email development for different brands from many industries such as education, medicine, fashion, entertainment and others.",
+      image: shadeTabletImage.src
     }
   },
 ];
