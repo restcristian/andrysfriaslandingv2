@@ -3,6 +3,8 @@ import fusionScreen from "@/assets/images/screens@2x.c1666b66.png";
 import fusionTVEmail from "@/assets/images/Univision_Fusion-TV-RoundUp-Email-bottom1@2x.4f6f65d2.png";
 import shadeImage from "@/assets/images/shade2.52e50a75.gif";
 import shadeTabletImage from "@/assets/images/tablet_fusion1@2x.7cd4f73e.png"
+import pantherSuiteNextImage from "@/assets/images/panther@2x.8db94f47.png"
+
 export interface DetailedProject {
   slug: string;
   bannerImageUrl: string;
@@ -36,6 +38,11 @@ export interface DetailedProject {
     text: string;
     image?: string;
   };
+  nextProject: {
+    image: string;
+    title: string;
+    slug: string
+  },
 }
 export const detailedProjects: DetailedProject[] = [
   {
@@ -70,6 +77,11 @@ export const detailedProjects: DetailedProject[] = [
       title: "My team work",
       text: "While I was working in Theorem LC. for 5 years as a designer, I had developed skills such as email design as well as email development for different brands from many industries such as education, medicine, fashion, entertainment and others.",
       image: shadeTabletImage.src
+    },
+    nextProject: {
+      image: pantherSuiteNextImage.src,
+      title: 'Panther Suite',
+      slug: 'panthersuite'
     }
   },
 ];

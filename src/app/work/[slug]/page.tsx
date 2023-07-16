@@ -108,6 +108,22 @@ export default async function WorkPage({ params: { slug } }: Props) {
           <p className={styles.specialText}>{project?.thirdScreen.text}</p>
         </div>
       </div>
+      <div className={styles.nextProject}>
+        <img src={project?.nextProject.image} />
+        <div className={styles.nextProjectInfo}>
+          <a
+            className={styles.nextProjectLink}
+            href={`${project?.nextProject.slug}`}
+          >
+            <span>
+              <span>Next Project</span>
+            </span>
+            <div className={styles.nextProjectTitle}>
+              <span>{project?.nextProject.title}</span>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
