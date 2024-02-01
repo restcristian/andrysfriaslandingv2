@@ -2,15 +2,16 @@ import peopleFusionImage from "@/assets/images/people_fusion2@2x.af13e467.png";
 import fusionScreen from "@/assets/images/screens@2x.c1666b66.png";
 import fusionTVEmail from "@/assets/images/Univision_Fusion-TV-RoundUp-Email-bottom1@2x.4f6f65d2.png";
 import shadeImage from "@/assets/images/shade2.52e50a75.gif";
-import shadeTabletImage from "@/assets/images/tablet_fusion1@2x.7cd4f73e.png"
-import pantherSuiteNextImage from "@/assets/images/panther@2x.8db94f47.png"
-
+import shadeTabletImage from "@/assets/images/tablet_fusion1@2x.7cd4f73e.png";
+import pantherSuiteNextImage from "@/assets/images/panther@2x.8db94f47.png";
+import pantherSuiteBannerImage from "@/assets/images/pantherhero@2x.a3bb009f.png";
 export interface DetailedProject {
   slug: string;
   banner: {
     image: string;
-    backgroundColor: string
-  },
+    backgroundColor: string;
+    textColor?: string;
+  };
   description: {
     title: string;
     text: string;
@@ -23,8 +24,7 @@ export interface DetailedProject {
   screen: {
     imageUrl: string;
     hasBorder?: boolean;
-    borderColor?: string
-    
+    borderColor?: string;
   };
   paletteColors: {
     text: string;
@@ -39,7 +39,7 @@ export interface DetailedProject {
   special: {
     title: string;
     text: string;
-    textColor: string
+    textColor: string;
   };
   secondScreen: {
     image: string;
@@ -50,22 +50,22 @@ export interface DetailedProject {
     text: string;
     image?: string;
     textColor: string;
-    hasImageOffset?: boolean
+    hasImageOffset?: boolean;
   };
   nextProject: {
     image: string;
     title: string;
-    slug: string
-    textColor: string
-  },
+    slug: string;
+    textColor: string;
+  };
 }
 export const detailedProjects: DetailedProject[] = [
   {
     slug: "fusion-tv",
-    
+
     banner: {
       image: peopleFusionImage.src,
-      backgroundColor: ''
+      backgroundColor: "",
     },
     description: {
       title: "1. FusionTV",
@@ -73,29 +73,28 @@ export const detailedProjects: DetailedProject[] = [
       role: "Art Direction,\n Head Designer\n,Animator",
       client: "Univision",
       year: 2017,
-      backgroundColor:"#6653a6",
-      textColor: 'white'
+      backgroundColor: "#6653a6",
+      textColor: "white",
     },
     screen: {
       imageUrl: fusionScreen.src,
       hasBorder: false,
-      borderColor: '#beecfa',
-      
+      borderColor: "#beecfa",
     },
     paletteColors: {
       text: "High contrast colors from Fusion TV rebranding to highlight daily emails and the special announcement ones.",
       colors: ["#6652a6", "#dbe0e6", "#24242c"],
-      backgroundColor: '#f2f2f2',
-      textColor: '#6653a6'
+      backgroundColor: "#f2f2f2",
+      textColor: "#6653a6",
     },
     frame: {
       image: fusionTVEmail.src,
-      borderColor: "#dbe0e6"
+      borderColor: "#dbe0e6",
     },
     special: {
       title: "Special Announcements",
       text: "As past of this rebranding campaign the following email was created with high contrast colors and animated gifs as a hero image, to impact the viewer to click the call action button.",
-      textColor: '#333'
+      textColor: "#333",
     },
     secondScreen: {
       image: shadeImage.src,
@@ -105,15 +104,70 @@ export const detailedProjects: DetailedProject[] = [
       title: "My team work",
       text: "While I was working in Theorem LC. for 5 years as a designer, I had developed skills such as email design as well as email development for different brands from many industries such as education, medicine, fashion, entertainment and others.",
       image: shadeTabletImage.src,
-      textColor: '#333',
-      hasImageOffset: true
+      textColor: "#333",
+      hasImageOffset: true,
     },
     nextProject: {
       image: pantherSuiteNextImage.src,
-      title: 'Panther Suite',
-      slug: 'panthersuite',
-      textColor: '#beecfa'
-    }
+      title: "Panther Suite",
+      slug: "panthersuite",
+      textColor: "#beecfa",
+    },
+  },
+  {
+    slug: "panthersuite",
+
+    banner: {
+      image: pantherSuiteBannerImage.src,
+      backgroundColor: "#beecfa",
+      textColor: "#fff",
+    },
+    description: {
+      title: "2. Panther Suite",
+      text: `Panther Suite is a personal project that I designed it focused in local concerts events. In this particularly one I had fun making the branding and as well as the design for the website and a landing page for its own launching.`,
+      role: "Art Director,\nUX UI Designer,\n& Branding",
+      client: "Personal",
+      year: 2017,
+      backgroundColor: "#0a1c2e",
+      textColor: "white",
+    },
+    screen: {
+      imageUrl: fusionScreen.src,
+      hasBorder: false,
+      borderColor: "#beecfa",
+    },
+    paletteColors: {
+      text: "High contrast colors from Fusion TV rebranding to highlight daily emails and the special announcement ones.",
+      colors: ["#6652a6", "#dbe0e6", "#24242c"],
+      backgroundColor: "#f2f2f2",
+      textColor: "#6653a6",
+    },
+    frame: {
+      image: fusionTVEmail.src,
+      borderColor: "#dbe0e6",
+    },
+    special: {
+      title: "Special Announcements",
+      text: "As past of this rebranding campaign the following email was created with high contrast colors and animated gifs as a hero image, to impact the viewer to click the call action button.",
+      textColor: "#333",
+    },
+    secondScreen: {
+      image: shadeImage.src,
+      backgroundColor: "#6653a6",
+    },
+    thirdScreen: {
+      title: "My team work",
+      text: "While I was working in Theorem LC. for 5 years as a designer, I had developed skills such as email design as well as email development for different brands from many industries such as education, medicine, fashion, entertainment and others.",
+      image: shadeTabletImage.src,
+      textColor: "#333",
+      hasImageOffset: true,
+    },
+    nextProject: {
+      image: pantherSuiteNextImage.src,
+      title: "Panther Suite",
+      slug: "panthersuite",
+      textColor: "#beecfa",
+    },
   },
 ];
 export function json() {

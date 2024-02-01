@@ -21,11 +21,21 @@ export default async function WorkPage({ params: { slug } }: Props) {
 
   return (
     <div className={styles.detailWork}>
-      <div className={styles.banner}>
+      <div
+        className={styles.banner}
+        style={{
+          backgroundColor: project?.banner?.backgroundColor ?? undefined,
+        }}
+      >
         <div className={styles.bannerContainer}>
           <img src={project?.banner.image} alt="image" />
         </div>
-        <span className={styles.bannerText}>{project?.slug}</span>
+        <span
+          className={styles.bannerText}
+          style={{ color: project?.banner?.textColor ?? undefined }}
+        >
+          {project?.slug}
+        </span>
       </div>
       <div
         className={styles.description}
