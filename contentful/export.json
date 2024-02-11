@@ -2033,6 +2033,213 @@
           "omitted": false
         }
       ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "i15a8mijupxg"
+          }
+        },
+        "id": "centerImageWorkPageSection",
+        "type": "ContentType",
+        "createdAt": "2024-02-11T15:43:54.627Z",
+        "updatedAt": "2024-02-11T15:43:55.143Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-02-11T15:43:55.143Z",
+        "firstPublishedAt": "2024-02-11T15:43:55.143Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        }
+      },
+      "displayField": "slug",
+      "name": "Center Image Work Page Section",
+      "description": "Center Image Work Page Section",
+      "fields": [
+        {
+          "id": "slug",
+          "name": "slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "backgroundColor",
+          "name": "backgroundColor",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "image",
+          "name": "image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "i15a8mijupxg"
+          }
+        },
+        "id": "nextProjectWorkPageSection",
+        "type": "ContentType",
+        "createdAt": "2024-02-11T16:10:52.555Z",
+        "updatedAt": "2024-02-11T16:10:53.261Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-02-11T16:10:53.261Z",
+        "firstPublishedAt": "2024-02-11T16:10:53.261Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        }
+      },
+      "displayField": "slug",
+      "name": "Next Project Work Page Section",
+      "description": "Next Project Work Page Section",
+      "fields": [
+        {
+          "id": "slug",
+          "name": "slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "backgroundColor",
+          "name": "backgroundColor",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "nextProjectSlug",
+          "name": "nextProjectSlug",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "nextProjectImage",
+          "name": "nextProjectImage",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "textColor",
+          "name": "textColor",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "textColorHover",
+          "name": "textColorHover",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
     }
   ],
   "tags": [
@@ -3290,6 +3497,143 @@
         },
         {
           "fieldId": "textColor",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "i15a8mijupxg",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2024-02-11T15:43:55.318Z",
+        "createdBy": {
+          "sys": {
+            "id": "5t36WMCsAk0oubJF1v7lO0",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2024-02-11T15:43:56.224Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5t36WMCsAk0oubJF1v7lO0",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "centerImageWorkPageSection",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "slug",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "backgroundColor",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "image",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "i15a8mijupxg",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2024-02-11T16:10:53.389Z",
+        "createdBy": {
+          "sys": {
+            "id": "5t36WMCsAk0oubJF1v7lO0",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2024-02-11T16:10:54.032Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5t36WMCsAk0oubJF1v7lO0",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "nextProjectWorkPageSection",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "slug",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "backgroundColor",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "nextProjectSlug",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "nextProjectImage",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "textColor",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "textColorHover",
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
         }
@@ -8028,7 +8372,7 @@
         "id": "ApwEcSaq2Sl9UYRhP3wMF",
         "type": "Entry",
         "createdAt": "2024-02-01T20:10:38.500Z",
-        "updatedAt": "2024-02-11T13:16:42.603Z",
+        "updatedAt": "2024-02-11T16:13:07.399Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -8036,8 +8380,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 25,
-        "publishedAt": "2024-02-11T13:16:42.603Z",
+        "publishedVersion": 33,
+        "publishedAt": "2024-02-11T16:13:07.399Z",
         "firstPublishedAt": "2024-02-01T20:10:57.419Z",
         "createdBy": {
           "sys": {
@@ -8053,8 +8397,8 @@
             "id": "5t36WMCsAk0oubJF1v7lO0"
           }
         },
-        "publishedCounter": 8,
-        "version": 26,
+        "publishedCounter": 12,
+        "version": 34,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -8118,6 +8462,34 @@
                 "type": "Link",
                 "linkType": "Entry",
                 "id": "7uVAhYsulmcKVT0rFLlK5S"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3U9so2frmUS7esT5BdxYxB"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "48Vrc191MFq6D4QjwFdniy"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "2oPmaj6dtckfp89GJeEzm6"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5Od7cpKgfN6gQg1uL7YIAx"
               }
             }
           ]
@@ -8610,6 +8982,324 @@
         },
         "textColor": {
           "en-US": "#000000"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "i15a8mijupxg"
+          }
+        },
+        "id": "3U9so2frmUS7esT5BdxYxB",
+        "type": "Entry",
+        "createdAt": "2024-02-11T15:44:43.452Z",
+        "updatedAt": "2024-02-11T15:48:40.068Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2024-02-11T15:48:40.068Z",
+        "firstPublishedAt": "2024-02-11T15:46:48.979Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "centerImageWorkPageSection"
+          }
+        }
+      },
+      "fields": {
+        "slug": {
+          "en-US": "Fusion TV Center Email with Background"
+        },
+        "backgroundColor": {
+          "en-US": "#6653a6"
+        },
+        "image": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "4V9FUXl9H5W1S1CG3dw6sd"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "i15a8mijupxg"
+          }
+        },
+        "id": "48Vrc191MFq6D4QjwFdniy",
+        "type": "Entry",
+        "createdAt": "2024-02-11T15:59:05.361Z",
+        "updatedAt": "2024-02-11T16:02:24.195Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2024-02-11T16:02:24.195Z",
+        "firstPublishedAt": "2024-02-11T16:02:24.195Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "screenWorkPageSection"
+          }
+        }
+      },
+      "fields": {
+        "slug": {
+          "en-US": "Fusion TV Tablet Fusion "
+        },
+        "hasBorder": {
+          "en-US": false
+        },
+        "noOverlap": {
+          "en-US": false
+        },
+        "image": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2h43YVPqU6sgFbwwhIaUV0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "i15a8mijupxg"
+          }
+        },
+        "id": "2oPmaj6dtckfp89GJeEzm6",
+        "type": "Entry",
+        "createdAt": "2024-02-11T16:03:38.007Z",
+        "updatedAt": "2024-02-11T16:04:32.129Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2024-02-11T16:04:32.129Z",
+        "firstPublishedAt": "2024-02-11T16:04:21.052Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "frameTextWorkPage"
+          }
+        }
+      },
+      "fields": {
+        "slug": {
+          "en-US": "Fusion TV My team work"
+        },
+        "title": {
+          "en-US": "My team work"
+        },
+        "description": {
+          "en-US": "While I was working in Theorem LC. for 5 years as a designer, I had developed skills such as email design as well as email development for different brands from many industries such as education, medicine, fashion, entertainment and others."
+        },
+        "backgroundColor": {
+          "en-US": "#ffffff"
+        },
+        "textColor": {
+          "en-US": "#000000"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "i15a8mijupxg"
+          }
+        },
+        "id": "5Od7cpKgfN6gQg1uL7YIAx",
+        "type": "Entry",
+        "createdAt": "2024-02-11T16:11:54.420Z",
+        "updatedAt": "2024-02-11T16:12:58.006Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2024-02-11T16:12:58.006Z",
+        "firstPublishedAt": "2024-02-11T16:12:58.006Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "nextProjectWorkPageSection"
+          }
+        }
+      },
+      "fields": {
+        "slug": {
+          "en-US": "Panther Suit"
+        },
+        "backgroundColor": {
+          "en-US": "#ffffff"
+        },
+        "nextProjectSlug": {
+          "en-US": "panthersuit"
+        },
+        "nextProjectImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "5REhj7IMJ7WG0JySedlGSL"
+            }
+          }
         }
       }
     }
@@ -47894,6 +48584,228 @@
               }
             },
             "fileName": "Univision_Fusion-TV-RoundUp-Email-bottom1@2x.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "i15a8mijupxg"
+          }
+        },
+        "id": "4V9FUXl9H5W1S1CG3dw6sd",
+        "type": "Asset",
+        "createdAt": "2024-02-11T15:46:02.391Z",
+        "updatedAt": "2024-02-11T15:46:41.893Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2024-02-11T15:46:41.893Z",
+        "firstPublishedAt": "2024-02-11T15:46:41.893Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Fusion TV Mail For Section"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/i15a8mijupxg/4V9FUXl9H5W1S1CG3dw6sd/fe0ee165c257f0e46068ce72f1c654fe/fusionmail_2x.png",
+            "details": {
+              "size": 376843,
+              "image": {
+                "width": 1584,
+                "height": 2930
+              }
+            },
+            "fileName": "fusionmail@2x.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "i15a8mijupxg"
+          }
+        },
+        "id": "2h43YVPqU6sgFbwwhIaUV0",
+        "type": "Asset",
+        "createdAt": "2024-02-11T16:01:31.187Z",
+        "updatedAt": "2024-02-11T16:02:09.360Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2024-02-11T16:02:09.360Z",
+        "firstPublishedAt": "2024-02-11T16:02:09.360Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Fusion TV Tablet Fusion image"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/i15a8mijupxg/2h43YVPqU6sgFbwwhIaUV0/f3f96ca0f600b2b903f3901d97b0bb6d/tablet_fusion1_2x.png",
+            "details": {
+              "size": 173674,
+              "image": {
+                "width": 2116,
+                "height": 1584
+              }
+            },
+            "fileName": "tablet_fusion1@2x.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "i15a8mijupxg"
+          }
+        },
+        "id": "5REhj7IMJ7WG0JySedlGSL",
+        "type": "Asset",
+        "createdAt": "2024-02-11T16:12:26.271Z",
+        "updatedAt": "2024-02-11T16:12:53.175Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2024-02-11T16:12:53.175Z",
+        "firstPublishedAt": "2024-02-11T16:12:53.175Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5t36WMCsAk0oubJF1v7lO0"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Panthersuit Next Project"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/i15a8mijupxg/5REhj7IMJ7WG0JySedlGSL/130c3fcd559878653eb41ff507148d08/panther_2x.png",
+            "details": {
+              "size": 376042,
+              "image": {
+                "width": 1172,
+                "height": 1462
+              }
+            },
+            "fileName": "panther@2x.png",
             "contentType": "image/png"
           }
         }

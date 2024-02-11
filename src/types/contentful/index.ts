@@ -1,4 +1,5 @@
 export type { TypeBannerWorkPageSection, TypeBannerWorkPageSectionFields } from "./TypeBannerWorkPageSection";
+export type { TypeCenterImageWorkPageSection, TypeCenterImageWorkPageSectionFields } from "./TypeCenterImageWorkPageSection";
 export type { TypeCeremonia, TypeCeremoniaFields } from "./TypeCeremonia";
 export type { TypeDescriptionWorkPageSection, TypeDescriptionWorkPageSectionFields } from "./TypeDescriptionWorkPageSection";
 export type { TypeDetails, TypeDetailsFields } from "./TypeDetails";
@@ -7,6 +8,7 @@ export type { TypeFiesta70, TypeFiesta70Fields } from "./TypeFiesta70";
 export type { TypeFirstLook, TypeFirstLookFields } from "./TypeFirstLook";
 export type { TypeFrameTextWorkPage, TypeFrameTextWorkPageFields } from "./TypeFrameTextWorkPage";
 export type { TypeGettingReady, TypeGettingReadyFields } from "./TypeGettingReady";
+export type { TypeNextProjectWorkPageSection, TypeNextProjectWorkPageSectionFields } from "./TypeNextProjectWorkPageSection";
 export type { TypeNovios, TypeNoviosFields } from "./TypeNovios";
 export type { TypePaletteColorsWorkPageSection, TypePaletteColorsWorkPageSectionFields } from "./TypePaletteColorsWorkPageSection";
 export type { TypePhotobooth, TypePhotoboothFields } from "./TypePhotobooth";

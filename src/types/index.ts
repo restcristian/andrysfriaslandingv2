@@ -15,10 +15,18 @@ export type SquareFrameWorkPageSection =
 
 export type FrameTextWorkPageSection = Contentful.TypeFrameTextWorkPage;
 
+export type CenterImageWorkPageSection =
+  Contentful.TypeCenterImageWorkPageSection;
+
+export type NextProjectWorkPageSection =
+  Contentful.TypeNextProjectWorkPageSection;
+
 export type WorkPageSection =
   | BannerWorkPageSection
   | DescriptionWorkPageSection
   | ScreenWorkPageSection
   | PaletteColorsWorkPageSection
   | SquareFrameWorkPageSection
-  | FrameTextWorkPageSection;
+  | FrameTextWorkPageSection
+  | CenterImageWorkPageSection
+  | NextProjectWorkPageSection;

@@ -34,7 +34,7 @@ export const fetchWorkPageBySlug = async (slug: string) => {
 
 export const getWorkPageRenderTree = (workPage: WorkPage) => {
   const workPageRenderTree: WorkPageRenderTree = {};
-  workPage.fields?.blocks?.forEach((item: WorkPageSection, index: number) => {
+  workPage?.fields?.blocks?.forEach((item: WorkPageSection, index: number) => {
     workPageRenderTree[`${item.sys.contentType.sys.id}-${index}`] = item;
   });
 

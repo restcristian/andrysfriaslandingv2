@@ -13,6 +13,8 @@ import ScreenImageWorkPageSection from "@/components/Blocks/ScreenImageWorkPageS
 import PaletteColorsWorkPageSection from "@/components/Blocks/PaletteColorsWorkPageSection";
 import FrameSquareWorkPageSection from "@/components/Blocks/FrameSquareWorkPageSection";
 import FrameTextWorkPageSection from "@/components/Blocks/FrameTextWorkPageSection";
+import CenterImageWorkPageSection from "@/components/Blocks/CenterImageWorkPageSection";
+import NextProjectWorkPageSection from "@/components/Blocks/NextProjectWorkPageSection";
 
 async function getData(slug: string) {
   const currentProject = detailedProjects.find(
@@ -54,6 +56,12 @@ export default async function WorkPage({ params: { slug } }: Props) {
       ["FRAMETEXTWORKPAGE"]: (props: WorkPageSection) => (
         <FrameTextWorkPageSection frameText={props} />
       ),
+      ["CENTERIMAGEWORKPAGESECTION"]: (props: WorkPageSection) => (
+        <CenterImageWorkPageSection screen={props} />
+      ),
+      ["NEXTPROJECTWORKPAGESECTION"]: (props: WorkPageSection) => (
+        <NextProjectWorkPageSection nextProject={props} />
+      ),
     };
     const nodes = [];
     for (const [key, value] of Object.entries(tree)) {
@@ -67,60 +75,10 @@ export default async function WorkPage({ params: { slug } }: Props) {
     return nodes;
   };
 
+  if (!workPage) return <div>no workpage found</div>;
   return (
     <div className={styles.detailWork}>
       {renderTree()}
-      <div
-        className={styles.secondScreen}
-        style={{ backgroundColor: project?.secondScreen.backgroundColor }}
-      >
-        <div className={styles.secondScreenWrapper}>
-          <div className={styles.secondScreenImageContainer}>
-            <img src={project?.secondScreen.image} />
-          </div>
-        </div>
-      </div>
-      {/*  */}
-      <div
-        className={classNames(styles.frame, styles.thirdScreen)}
-        style={{ color: project?.thirdScreen.textColor }}
-      >
-        <div className={styles.special}>
-          <div className={classNames(styles.thirdScreenImageContainer)}>
-            <img
-              src={project?.thirdScreen.image}
-              className={classNames({
-                [styles[`minus-mt-${100}`]]:
-                  project?.thirdScreen.hasImageOffset,
-              })}
-            />
-          </div>
-          <span className={styles.specialTitle}>
-            {project?.thirdScreen.title}
-          </span>
-          <p className={styles.specialText}>{project?.thirdScreen.text}</p>
-        </div>
-      </div>
-      {/*  */}
-      <div className={styles.nextProject}>
-        <img src={project?.nextProject.image} />
-        <div
-          className={styles.nextProjectInfo}
-          style={{ color: project?.nextProject.textColor }}
-        >
-          <a
-            className={styles.nextProjectLink}
-            href={`${project?.nextProject.slug}`}
-          >
-            <span>
-              <span>Next Project</span>
-            </span>
-            <div className={styles.nextProjectTitle}>
-              <span>{project?.nextProject.title}</span>
-            </div>
-          </a>
-        </div>
-      </div>
       {/*  */}
     </div>
   );
