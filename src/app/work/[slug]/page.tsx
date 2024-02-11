@@ -2,11 +2,23 @@ import { detailedProjects } from "@/utils/mockedDetailedProjects";
 import classNames from "classnames";
 import React from "react";
 import styles from "./detailWork.module.scss";
+import {
+  fetchWorkPageBySlug,
+  getWorkPageRenderTree,
+} from "@/services/contentful";
+import BannerWorkPageSection from "@/components/Blocks/BannerWorkPageSection";
+import { WorkPageSection } from "@/types";
+import { DescriptionWorkPageSection } from "@/components/Blocks/DescriptionWorkPageSection";
+import ScreenImageWorkPageSection from "@/components/Blocks/ScreenImageWorkPageSection";
+import PaletteColorsWorkPageSection from "@/components/Blocks/PaletteColorsWorkPageSection";
+import FrameSquareWorkPageSection from "@/components/Blocks/FrameSquareWorkPageSection";
+import FrameTextWorkPageSection from "@/components/Blocks/FrameTextWorkPageSection";
 
 async function getData(slug: string) {
   const currentProject = detailedProjects.find(
     (project) => project.slug === slug
   );
+
   return currentProject;
 }
 
@@ -19,110 +31,45 @@ type Props = {
 export default async function WorkPage({ params: { slug } }: Props) {
   const project = await getData(slug);
 
+  const workPage = await fetchWorkPageBySlug(slug);
+  const tree = getWorkPageRenderTree(workPage);
+
+  const renderTree = () => {
+    const t = {
+      [BannerWorkPageSection.name.toUpperCase()]: (props: WorkPageSection) => (
+        <BannerWorkPageSection banner={props} />
+      ),
+      [DescriptionWorkPageSection.name.toUpperCase()]: (
+        props: WorkPageSection
+      ) => <DescriptionWorkPageSection description={props} />,
+      ["SCREENWORKPAGESECTION"]: (props: WorkPageSection) => (
+        <ScreenImageWorkPageSection screen={props} />
+      ),
+      ["PALETTECOLORSWORKPAGESECTION"]: (props: WorkPageSection) => (
+        <PaletteColorsWorkPageSection paletteColors={props} />
+      ),
+      ["SQUAREFRAMEWORKPAGESECTION"]: (props: WorkPageSection) => (
+        <FrameSquareWorkPageSection frame={props} />
+      ),
+      ["FRAMETEXTWORKPAGE"]: (props: WorkPageSection) => (
+        <FrameTextWorkPageSection frameText={props} />
+      ),
+    };
+    const nodes = [];
+    for (const [key, value] of Object.entries(tree)) {
+      const typeNameKey = key.split("-")[0];
+      const component = t[typeNameKey.toUpperCase()]?.(value);
+      if (component) {
+        nodes.push(component);
+      }
+      console.log(`${key}: ${value}`);
+    }
+    return nodes;
+  };
+
   return (
     <div className={styles.detailWork}>
-      <div
-        className={styles.banner}
-        style={{
-          backgroundColor: project?.banner?.backgroundColor ?? undefined,
-        }}
-      >
-        <div className={styles.bannerContainer}>
-          <img src={project?.banner.image} alt="image" />
-        </div>
-        <span
-          className={styles.bannerText}
-          style={{ color: project?.banner?.textColor ?? undefined }}
-        >
-          {project?.slug}
-        </span>
-      </div>
-      <div
-        className={styles.description}
-        style={{
-          backgroundColor: project?.description.backgroundColor,
-          color: project?.description.textColor,
-        }}
-      >
-        <div className={styles.descriptionContainer}>
-          <span className={styles.descriptionTitle}>
-            {project?.description.title}
-          </span>
-          <p className={styles.descriptionText}>{project?.description.text}</p>
-          <div className={styles.descriptionTable}>
-            <div className={styles.tableRow}>
-              <div className={styles.tableHeader}>Role</div>
-              <div className={styles.tableHeader}>Client</div>
-              <div className={styles.tableHeader}>Year</div>
-            </div>
-            <div className={styles.tableRow}>
-              <div className={styles.tableCol}>{project?.description.role}</div>
-              <div className={styles.tableCol}>
-                {project?.description.client}
-              </div>
-              <div className={styles.tableCol}>{project?.description.year}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className={styles.screen}>
-        <div
-          className={classNames(styles.screenContainer, {
-            [styles[`mt-${124}`]]: project?.screen.hasBorder,
-          })}
-        >
-          <div
-            className={classNames(styles.screenImgContainer, {
-              [styles.border]: project?.screen.hasBorder,
-            })}
-            style={{ borderColor: project?.screen.borderColor }}
-          >
-            <img src={project?.screen.imageUrl} />
-          </div>
-        </div>
-      </div>
-      <div
-        className={styles.paletteColors}
-        style={{ backgroundColor: project?.paletteColors.backgroundColor }}
-      >
-        <div className={styles.paletteColorsWrapper}>
-          <span
-            className={styles.paletteColorTitle}
-            style={{ color: project?.paletteColors.textColor }}
-          >
-            Palette Colors
-          </span>
-          <ul className={styles.palettetColorsContainer}>
-            {project?.paletteColors.colors.map((color) => (
-              <li key={color} style={{ backgroundColor: color }}></li>
-            ))}
-          </ul>
-          <p className={styles.paletteColorsText}>
-            {project?.paletteColors.text}
-          </p>
-        </div>
-      </div>
-      <div className={styles.frame}>
-        <div className={styles.frameWrapper}>
-          <div
-            className={styles.frameSquare}
-            style={{ backgroundColor: project?.frame.borderColor }}
-          >
-            <div className={styles.frameImageContainer}>
-              <img src={project?.frame.image} />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className={styles.frame}
-        style={{ color: project?.special.textColor }}
-      >
-        <div className={styles.special}>
-          <span className={styles.specialTitle}>{project?.special.title}</span>
-          <p className={styles.specialText}>{project?.special.text}</p>
-        </div>
-      </div>
+      {renderTree()}
       <div
         className={styles.secondScreen}
         style={{ backgroundColor: project?.secondScreen.backgroundColor }}
@@ -133,6 +80,7 @@ export default async function WorkPage({ params: { slug } }: Props) {
           </div>
         </div>
       </div>
+      {/*  */}
       <div
         className={classNames(styles.frame, styles.thirdScreen)}
         style={{ color: project?.thirdScreen.textColor }}
@@ -153,6 +101,7 @@ export default async function WorkPage({ params: { slug } }: Props) {
           <p className={styles.specialText}>{project?.thirdScreen.text}</p>
         </div>
       </div>
+      {/*  */}
       <div className={styles.nextProject}>
         <img src={project?.nextProject.image} />
         <div
@@ -172,6 +121,7 @@ export default async function WorkPage({ params: { slug } }: Props) {
           </a>
         </div>
       </div>
+      {/*  */}
     </div>
   );
 }

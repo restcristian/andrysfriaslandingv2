@@ -1,0 +1,50 @@
+@import "../../../styles/constansts";
+@import "../../../styles/colors";
+
+.detailWork {
+  .description {
+    padding: 95px 0;
+    font-family: "Source Code Pro", monospace;
+    margin: 0 -8px;
+    background-color: red;
+  }
+
+  .descriptionContainer {
+    width: 50%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 24px;
+    @media (max-width: 765px) {
+      width: 100%;
+    }
+  }
+
+  .descriptionTitle {
+    font-size: 28px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+  }
+  .descriptionText {
+    line-height: 28px;
+  }
+
+  .descriptionTable {
+  }
+  .tableRow {
+    display: flex;
+    padding-top: 5px;
+  }
+  .tableHeader {
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  .tableHeader,
+  .tableCol {
+    flex: 1;
+  }
+  .tableCol {
+    line-height: 24px;
+  }
+
+  @include margins();
+}

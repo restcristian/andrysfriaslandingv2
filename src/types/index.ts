@@ -1,0 +1,24 @@
+import * as Contentful from "./contentful";
+
+export type WorkPage = Contentful.TypeWorkPage;
+export type BannerWorkPageSection = Contentful.TypeBannerWorkPageSection;
+export type DescriptionWorkPageSection =
+  Contentful.TypeDescriptionWorkPageSection;
+
+export type PaletteColorsWorkPageSection =
+  Contentful.TypePaletteColorsWorkPageSection;
+
+export type ScreenWorkPageSection = Contentful.TypeScreenWorkPageSection;
+
+export type SquareFrameWorkPageSection =
+  Contentful.TypeSquareFrameWorkPageSection;
+
+export type FrameTextWorkPageSection = Contentful.TypeFrameTextWorkPage;
+
+export type WorkPageSection =
+  | BannerWorkPageSection
+  | DescriptionWorkPageSection
+  | ScreenWorkPageSection
+  | PaletteColorsWorkPageSection
+  | SquareFrameWorkPageSection
+  | FrameTextWorkPageSection;

@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cf-export": "contentful space export --config contentful/export-config.json --management-token CFPAT-Aa7phzp5a6432A2y9t46YAcybigoafEIlwqYvFdyxz0 --space-id i15a8mijupxg",
+    "cf-generate-types": "cf-content-types-generator contentful/export.json --out src/types/contentful"
   },
   "dependencies": {
     "@next/font": "13.1.6",
@@ -14,6 +16,7 @@
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
     "classnames": "^2.3.2",
+    "contentful": "^10.6.21",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
     "framer-motion": "^10.12.4",
@@ -25,6 +28,8 @@
     "zustand": "^4.3.7"
   },
   "devDependencies": {
+    "cf-content-types-generator": "^2.14.0",
+    "contentful-cli": "^3.1.41",
     "react-icons": "^4.9.0"
   }
 }

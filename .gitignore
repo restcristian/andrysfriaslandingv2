@@ -34,3 +34,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Generated
+
+typeCeremonia.ts
+typeDetails.ts
+TypeFiesta70.ts
+TypeDetalleEspecial.ts
+TypeFirstLook.ts
+TypeNovios.ts
+TypePhotobooth.ts
+TypeGettingReady.ts
+TypePhotoboothCollage.ts
+TypeRecepcionBoda.ts
